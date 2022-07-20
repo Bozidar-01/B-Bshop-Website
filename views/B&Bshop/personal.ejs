@@ -1,0 +1,75 @@
+<%- include('../partials/header')  %> 
+
+ 
+
+    <div class="row">
+        <div class="col-lg-12 offset-xl-2 col-sl-8 offset-xxl-3 col-xxl-6">
+
+            <h4 style="color: white;">Add a new product</h4>
+
+
+            <form method="post" action="/manufacturer">
+                <div class="form-floating mb-2">
+                    <input id="name" class="form-control" type="text"
+                    <% if(formData.name && formData.name.value) {%>                         
+                        value="<%- formData.name.value%>"
+                    <% } %>
+                     name="name" placeholder="Enter the name">
+                    <Label for="name">Enter the name</label>    
+                        <% if(formData.name && !formData.name.valid) {%>
+                            <div class="text-danger mt-1 ms-2">
+                                <small> <%- formData.name.errorMsg %> </small>
+                            </div>
+                            <% } %>               
+                </div>
+
+                <div class="form-floating mb-2">
+                    <input id="make_id" class="form-control" type="text"
+                    <% if(formData.make_id && formData.make_id.value) {%>                         
+                        value="<%- formData.make_id.value%>"
+                    <% } %>
+                     name="make_id" placeholder="Enter the make ID">
+                    <Label for="make_id">Enter the make ID</label> 
+                        <% if(formData.make_id && !formData.make_id.valid) {%>
+                            <div class="text-danger mt-1 ms-2">
+                                <small> <%- formData.make_id.errorMsg %> </small>
+                            </div>
+                            <% } %>                  
+                </div>
+
+                <div class="form-floating mb-2">
+                    <input id="model_img" class="form-control" type="text"
+                    <% if(formData.model_img && formData.model_img.value) {%>                         
+                        value="<%- formData.model_img.value%>"
+                    <% } %>
+                     name="model_img" placeholder="Enter the Car Image Url">
+                    <Label for="model_img">Enter the Car Image Url</label>     
+                        <% if(formData.model_img && !formData.model_img.valid) {%>
+                            <div class="text-danger mt-1 ms-2">
+                                <small> <%- formData.model_img.errorMsg %> </small>
+                            </div>
+                            <% } %>              
+                </div>
+
+              
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">Add Car</button>
+                </div>
+            </form>            
+
+            
+        </div>
+        <h3 style="color:white;">Car Manufacturer Make Id's</h3>
+        <p style="color:white;">Audi Make Id: 1</p>
+        <p style="color:white;">Mercedes Make Id: 2</p>
+        <p style="color:white;">Volkswagen Make Id: 3</p>
+        <p style="color:white;">Toyota Make Id: 4</p>
+        <p style="color:white;">Jeep Make Id: 5</p>
+        <p style="color:white;">Subaru Make Id: 6</p>
+        <p style="color:white;">Bmw Make Id: 7</p>
+        <p style="color:white;">Porsche Make Id: 8</p>
+    </div>
+  
+
+
+<%- include('../partials/footer')  %> 
