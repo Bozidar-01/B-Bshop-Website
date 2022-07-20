@@ -4594,7 +4594,29 @@ nav-item dropdown
   padding: 0.5rem 1rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+
 }
+@media(max-width: 992px){
+
+  .card{
+    height: 2vh;
+    width: 165px;
+    padding-bottom: 25px;
+  }
+
+  .card-footer {
+    width: 185px;
+   
+
+    position: absolute;
+
+    bottom: -1rem;
+    margin-left: -0.70rem;
+
+  }
+
+}
+
 .card-footer:last-child {
   border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
 }
