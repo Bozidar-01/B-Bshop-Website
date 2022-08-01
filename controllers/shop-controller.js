@@ -33,7 +33,7 @@ exports.showProducts = async function (req, res, next) {
         let products = await shopService.getAllProducts();
 
         res.render('shop', {
-            title: 'B&Bshop',
+            title: 'B&Bshop | Products',
             currentPage: 'shop',
             products
 
@@ -93,16 +93,22 @@ exports.showProduct = async function (req, res, next) {
 
     try {
 
+        let id = Number((req.params.id).replace(/[^\d].*/, ''));
 
-        let products = await shopService.getAllProducts();
+        let product = await shopService.getProduct(id);
 
-        res.render('shop/product', {
-            title: 'B&Bshop',
+
+        let products = await shopService.getAllProductsRandomly();
+
+        console.log(product);
+
+
+        res.render('product', {
+            title: 'Product',
             currentPage: 'product',
+            product,
             products
-
         });
-
 
 
     }
@@ -116,7 +122,7 @@ exports.about = async function (req, res, next) {
     try {
 
         res.render('about', {
-            title: 'B&Bshop',
+            title: 'About Us',
             currentPage: 'aboutUs'
 
         });

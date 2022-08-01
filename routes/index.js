@@ -13,8 +13,10 @@ router.get('/shop', shopController.showProducts);
 router.get('/contact', shopController.contact);
 router.post('/contact', shopController.validateContact);
 router.get('/about', shopController.about);
-router.get('/shop/product', shopController.showProduct);
-router.get('/shop/interior', shopController.showInterior);
-router.get('/shop/exterior', shopController.showExterior);
+// router.get('/shop/product/:id', shopController.showProduct);
+
+router.get('/shop/:id', shopController.showProduct);
+router.get('/interior', shopController.showInterior);
+router.get('/exterior', shopController.showExterior);
 
 module.exports = router;

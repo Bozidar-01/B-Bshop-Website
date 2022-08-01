@@ -1,0 +1,102 @@
+<%- include('./partials/shopHeader')  %>
+
+<section class="container sproduct  pt-1">
+<% for(i=0;i<product.length;i++) { %> 
+    <div class="row mt-5">
+      <div class="col-lg-5 col-md-12 col-12">
+        <img class="img-fluid w-100 pb-1" id="mainImg" src="<%- product[i].product_img  %> " alt="">
+
+        <div class="small-img-group">
+            <div class="small-img-col">
+                <img src="<%- product[i].product_img  %> "
+                width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="<%- product[i].product_img  %> "
+                width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="<%- product[i].product_img  %> "
+                width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="<%- product[i].product_img  %> "
+                width="100%" class="small-img" alt="">
+            </div>
+        </div>
+      </div> 
+      <div class="col-lg-6 col-md-12 col-12">
+
+        <h6> <a class="text-muted" href="/">Home</a> / <a class="text-muted" href="/shop">Shop</a>  </h6>
+        <h3 class="py-4"><%- product[i].name  %></h3>
+        <span class="text-muted text-decoration-line-through"><%- product[i].price %> </span>
+        <h4><%- product[i].sale %> MKD</h4> 
+
+        <select class="selectProduct my-2">
+            <option>Select Color</option>
+            <option>Red</option>
+            <option>Blue</option>
+            <option>White</option>
+            <option>Large</option>
+        </select>
+        <input class="inputNumber" type="number" min="1" max="5" value="1">
+        <button class="buy-btn">Add To Cart</button>
+        <h4 mt-5 mb-5>Product Details</h4>
+        <span><%- product[i].info %></span>
+      </div> 
+    </div>
+
+<% } %> 
+</section>
+<section id="featured" class="my-5 pb-5">
+ 
+
+<div class="container text-center mt-5 py-5">
+<h3>Related Products</h3>
+<hr class="product-divide mx-auto">
+</div>
+<div class="row mx-auto container">
+    <% for(i=0;i<8;i++) {%>
+    <div onclick="window.location.href='./<%-products[i].id%>';" class="product text-center col-lg-3 col-md-4 col-12">
+
+        <img class="img-fluid mb-3" src="<%- products[i].products_img  %> " alt="">
+        <div class="star">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </div>
+        <h5 class="p-name"><%- products[i].name  %></h5>
+        <h4><%- products[i].sale %> MKD</h4> 
+        <button class="buy-btn">Buy Now</button>
+    </div>
+    <% } %>
+    </div>
+   
+ 
+</section>
+
+<script>
+    var mainImg = document.getElementById("mainImg");
+    var smallImg = document.getElementsByClassName('small-img');
+
+    smallImg[0].onclick = function(){
+        mainImg.src=smallImg[0].src;        
+    }
+    smallImg[1].onclick = function(){
+        mainImg.src=smallImg[1].src;        
+    }
+    smallImg[2].onclick = function(){
+        mainImg.src=smallImg[2].src;        
+    }
+    smallImg[3].onclick = function(){
+        mainImg.src=smallImg[3].src;        
+    }
+
+$("[type='number']").keypress(function (evt) {
+    evt.preventDefault();
+});
+
+</script>
+<%- include('./partials/shopFooter')  %>
